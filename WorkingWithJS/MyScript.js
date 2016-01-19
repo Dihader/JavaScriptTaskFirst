@@ -17,9 +17,9 @@ function IsValidTable(row, column) {
 
 }
 function BuildTable(row, column) {
-    var colorsForCell = new Array("<td bgcolor=red>", "<td bgcolor=blue>", "<td bgcolor=yellow>", "<td bgcolor=green>");
-    var alph = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    document.write('<table id="idWalkTable" border="1">');
+    var colorsForCell = ["<td style='background-color:red;'>", "<td style='background-color:blue;'>", "<td style='background-color:yellow;'>", "<td style='background-color:green;'>"];/*" var colorsForCell = ["<td bgcolor=red;'>", "<td bgcolor=blue>", "<td bgcolor=yellow>", "<td bgcolor=green>"];*/
+    var alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    document.write('<table id="idWalkTable" border="1">');   
     for (var i = 1; i <= Number(row) ; i++) {
         document.write('<tr>');
         for (var j = 1; j <= Number(column) ; j++) {
@@ -34,12 +34,12 @@ function BuildTable(row, column) {
 function ChangeRedToGreen() {
     var table = document.getElementById('idWalkTable');
     var trList = table.getElementsByTagName('tr');
-    for (var i = 0; i < trList.length; i++) {
+    for (var i in trList){
         var tdList = trList[i].getElementsByTagName('td');
 
-        for (j = 0; j < tdList.length; j++) {
-            if (tdList[j].bgColor == "red") {
-                tdList[j].bgColor = "green";
+        for (var j in tdList) {
+             if ( tdList.item([j]).style.backgroundColor == "red") {
+                tdList[j].style.backgroundColor = "green";
             }
         }
     }
@@ -47,11 +47,12 @@ function ChangeRedToGreen() {
 function ClearYellow() {
     var table = document.getElementById('idWalkTable');
     var trList = table.getElementsByTagName('tr');
-    for (var i = 0; i < trList.length; i++) {
+
+    for (var i in trList) {
         var tdList = trList[i].getElementsByTagName('td');
 
-        for (j = 0; j < tdList.length; j++) {
-            if (tdList[j].bgColor == "yellow") {
+        for (var j in tdList) {
+            if (tdList.item([j]).style.backgroundColor == "yellow") {
                 tdList[j].textContent = "";
             }
         }
@@ -60,5 +61,4 @@ function ClearYellow() {
 function BuildButtons() {
     document.write('<input id="btnChange" type="button" value="Заменить все красные ячейки на зеленые"  onclick="ChangeRedToGreen()" />');
     document.write('<input id="btnClear"  type="button" value="Очистить все желтые ячейки"  onclick="ClearYellow()" />');
-
 }

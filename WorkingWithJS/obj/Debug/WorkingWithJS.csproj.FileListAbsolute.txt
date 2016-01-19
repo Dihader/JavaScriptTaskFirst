@@ -1,5 +1,4 @@
 D:\Учеба\5 курс\ИИСП\WorkingWithJS\WorkingWithJS\bin\WorkingWithJS.dll
 D:\Учеба\5 курс\ИИСП\WorkingWithJS\WorkingWithJS\bin\WorkingWithJS.pdb
-D:\Учеба\5 курс\ИИСП\WorkingWithJS\WorkingWithJS\obj\Debug\WorkingWithJS.csprojResolveAssemblyReference.cache
 D:\Учеба\5 курс\ИИСП\WorkingWithJS\WorkingWithJS\obj\Debug\WorkingWithJS.dll
 D:\Учеба\5 курс\ИИСП\WorkingWithJS\WorkingWithJS\obj\Debug\WorkingWithJS.pdb
